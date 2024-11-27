@@ -9,7 +9,7 @@ from Funcoes_principal import Funcoes_principal
 
 root=tix.Tk()
 
-class Camera_abrir(Funcoes_principal,Camera_funcoes):
+class Detector_camera(Funcoes_principal,Camera_funcoes):
     def __init__(self):
         self.root=root
         self.Principal_Janela()
@@ -45,4 +45,4 @@ class Camera_abrir(Funcoes_principal,Camera_funcoes):
 
 
         
-Camera_abrir()
+Detector_camera()
