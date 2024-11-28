@@ -25,13 +25,14 @@ class Camera_funcoes():
         global video
         ret,frame=video.read()
         if ret==True:
-            #configuracao visibilidade dos botoes 
-            self.btn_liga.config(state='disable')
-            self.btn_desligar.config(state='normal')
+           
             
             #captura a imagem
             frame=cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            
+            #cria texto em cima da imagem da webcam
+            font=cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(frame,"centralize o rosto ",(10,20), font, 1, (200,255,0), 3,2)
+            cv2.putText(frame,"+",(150,130), font, 1, (0,255,255), 4,1)
             #reconhece a face
             faces = self.face_classificador.detectMultiScale(frame)
             for (x,y,largura,altura) in faces:
@@ -55,8 +56,5 @@ class Camera_funcoes():
     def sair(self):
         global video
         video.release()
-        self.nomevideo.config(image='')
-        self.nomevideo.configure(bg = "#120201")
-        self.btn_liga.config(state='normal')
-        self.btn_desligar.config(state='disable')
+        
         

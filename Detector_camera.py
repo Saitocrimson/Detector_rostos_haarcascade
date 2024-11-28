@@ -29,7 +29,7 @@ class Detector_camera(Funcoes_principal,Camera_funcoes):
     def Label_camera(self):
         self.nomevideo=Label(self.root,bg='#120201')
         self.nomevideo.place(relx=0.1,rely=0.04,relwidth=0.8,relheight=0.6)
-        self.nome_foto=""
+        
 
     def Btn_camera(self):
        
